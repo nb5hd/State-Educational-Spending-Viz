@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title>Total State Education Spending Per Student in 2014</title>
+	<title>Choropleth Tutorial - Leaflet</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,8 +53,8 @@
 	};
 
 	info.update = function (props) {
-		this._div.innerHTML = '<h4>Total State Education Spending Per Student</h4>' +  (props ?
-			'<b>' + props.name + '</b><br /> $' + props.density + ' per student'
+		this._div.innerHTML = '<h4>US Population Density</h4>' +  (props ?
+			'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
 			: 'Hover over a state');
 	};
 
@@ -63,14 +63,14 @@
 
 	// get color depending on population density value
 	function getColor(d) {
-		return d > 17000 ? '#800026' :
-				d > 14000  ? '#BD0026' :
-				d > 12000  ? '#E31A1C' :
-				d > 11000  ? '#FC4E2A' :
-				d > 10000   ? '#FD8D3C' :
-				d > 9000   ? '#FEB24C' :
-				d > 8500   ? '#FED976' :
-							'#FFEDA0';
+		return d > 17000 ? '#084594' :
+				d > 14000  ? '#2171B5' :
+				d > 12000  ? '#4292C6' :
+				d > 11000  ? '#6BAED6' :
+				d > 10000   ? '#9ECAE1' :
+				d > 9000   ? '#C6DBEF' :
+				d > 8500   ? '#DEEBF7' :
+							'#F7FBFF';
 	}
 
 	function style(feature) {
@@ -125,7 +125,7 @@
 		onEachFeature: onEachFeature
 	}).addTo(map);
 
-	map.attributionControl.addAttribution('Education data &copy; <a href="http://www.governing.com/gov-data/education-data/state-education-spending-per-pupil-data.html</a>');
+	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
 
 
 	var legend = L.control({position: 'bottomright'});
