@@ -63,14 +63,11 @@
 
 	// get color depending on population density value
 	function getColor(d) {
-		return d > 17000 ? '#084594' :
-				d > 14000  ? '#2171B5' :
-				d > 12000  ? '#4292C6' :
-				d > 11000  ? '#6BAED6' :
-				d > 10000   ? '#9ECAE1' :
-				d > 9000   ? '#C6DBEF' :
-				d > 8500   ? '#DEEBF7' :
-							'#F7FBFF';
+		return d > 15000 ? '#08519C' :
+				d > 12000  ? '#3182BD' :
+				d > 10000  ? '#6BAED6' :
+				d > 9000  ? '#BDD7E7' :
+							'#EFF3FF';
 	}
 
 	function style(feature) {
@@ -133,7 +130,7 @@
 	legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [0, 8500, 9000, 10000, 11000, 12000, 14000, 17000],
+			grades = [0, 9000, 10000, 12000, 15000],
 			labels = [],
 			from, to;
 
