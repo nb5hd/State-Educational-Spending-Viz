@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title>Choropleth Tutorial - Leaflet</title>
+	<title>Total Education Spending Per Student in 2014</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,8 +53,8 @@
 	};
 
 	info.update = function (props) {
-		this._div.innerHTML = '<h4>US Population Density</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+		this._div.innerHTML = '<h4>Total Education Spending Per Student in 2014</h4>' +  (props ?
+			'<b>' + props.name + '</b><br />$' + props.density + ' per student'
 			: 'Hover over a state');
 	};
 
@@ -125,7 +125,7 @@
 		onEachFeature: onEachFeature
 	}).addTo(map);
 
-	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
+	map.attributionControl.addAttribution('Education data &copy; <a href="http://www.governing.com/gov-data/education-data/state-education-spending-per-pupil-data.html</a>');
 
 
 	var legend = L.control({position: 'bottomright'});
