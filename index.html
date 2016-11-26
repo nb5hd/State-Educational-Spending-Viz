@@ -54,7 +54,7 @@
 
 	info.update = function (props) {
 		this._div.innerHTML = '<h4>Total Education Spending Per Student in 2014</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />$' + props.density + ' per student'
+			'<b>' + props.name + '</b><br />$' + numberWithCommas(props.density) + ' per student'
 			: 'Hover over a state');
 	};
 
@@ -69,7 +69,9 @@
 				d > 9000  ? '#BDD7E7' :
 							'#EFF3FF';
 	}
-
+    function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 	function style(feature) {
 		return {
 			weight: 2,
